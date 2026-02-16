@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <div class="max-w-[715px] mt-6">
+      <div class="max-w-[715px] mt-5">
         <p class="text-center font-bold">
           Sed egestas, nibh a condimentum imperdiet
         </p>
@@ -146,7 +146,7 @@
         </div>
       </div>
 
-      <div class="max-w-[715px] mt-6">
+      <div class="max-w-[715px] mt-5">
         <p class="text-center font-bold">
           Sed egestas, nibh a condimentum imperdiet
         </p>
@@ -163,43 +163,79 @@
       class="h-full w-full pt-20 lg:pt-[100px] flex flex-col items-center justify-center"
     >
       <div class="grid grid-flow-cols-2 gap-[68px] max-w-[978px] h-full px-24">
-        <div class="col-span-2 relative">
+        <div class="relative col-span-2 cursor-pointer group">
           <h3
             id="header-text"
-            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[60px] text-center z-10"
+            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[60px] text-center z-20"
           >
             COLLECTION 01
           </h3>
+
+          <!-- main image -->
           <img
             src="assets/images/collection01.png"
             alt="A white smoke image"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10"
           />
+          <!-- main video -->
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/images/collection01-vid-cover.png"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          >
+            <source
+              src="assets/videos/collection01-hover-vid.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
-        <div class="relative aspect-square overflow-hidden">
+        <div
+          class="relative aspect-square overflow-hidden cursor-pointer group"
+        >
           <h3
             id="header-text"
-            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[40px] text-center z-10"
+            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[40px] text-center z-20"
           >
             COLLECTION 02
           </h3>
+
+          <!-- main image -->
           <img
             src="assets/images/collection02.png"
             alt="A person who got Dental Crown"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10"
+          />
+          <!-- hover image -->
+          <img
+            src="assets/images/hover-collection-img.png"
+            alt="A blurly man silhouette"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           />
         </div>
-        <div class="relative aspect-square overflow-hidden">
+        <div
+          class="relative aspect-square overflow-hidden cursor-pointer group"
+        >
           <h3
             id="header-text"
-            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[40px] text-center z-10"
+            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[40px] text-center z-20"
           >
             COLLECTION 03
           </h3>
+
+          <!-- main image -->
           <img
             src="assets/images/collection03.jpg"
             alt="A white flower"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10"
+          />
+          <!-- hover image -->
+          <img
+            src="assets/images/hover-collection-img.png"
+            alt="A blurly man silhouette"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           />
         </div>
       </div>
