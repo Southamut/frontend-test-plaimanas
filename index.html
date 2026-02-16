@@ -4,7 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PLAIMANAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- navbar -->
+    <div
+      class="navbar px-10 justify-between bg-white items-center h-[45px] min-h-0 shadow-sm"
+    >
+      <div class="dropdown dropdown-center group">
+        <div
+          tabindex="0"
+          class="flex gap-2 items-center text-[13px] font-normal cursor-pointer group-focus-within:opacity-50"
+        >
+          TH - THB
+          <span><img src="assets/svg/dropdown-arrow.svg" /></span>
+        </div>
+        <ul
+          tabindex="-1"
+          class="dropdown-content menu bg-white z-1 p-2 w-20 text-center cursor-pointer"
+        >
+          <li>US -USD</li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="menu menu-horizontal items-center p-0 gap-6">
+          <li>WOMEN</li>
+          <li>COLLECTION</li>
+          <li>EDITORIAL</li>
+          <li>NEWS</li>
+          <li>STORES</li>
+        </ul>
+      </div>
+
+      <div class="menu menu-horizontal p-0 w-[100px] justify-between">
+        <button class="text-[13px] font-normal cursor-pointer hover:opacity-50">
+          SIGN IN
+        </button>
+        <img
+          src="assets/svg/bag-vector.svg"
+          alt="bag-vector"
+          class="w-[17px] h-[17px] cursor-pointer"
+        />
+      </div>
+    </div>
+
+    <!-- logo -->
+    <div class="w-full">
+      <img
+        src="assets/svg/PLAIMANAS.svg"
+        alt="logo"
+        class="invert w-full h-auto px-5 pt-[25px]"
+      />
+    </div>
+  </body>
 </html>

@@ -1,0 +1,16 @@
+* {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.navbar .menu-horizontal li {
+  padding: 10px;
+  font-size: 13px !important;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .menu-horizontal li:hover {
+  font-weight: 700;
+  font-size: 18px !important;
+}
