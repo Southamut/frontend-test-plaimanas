@@ -1,5 +1,5 @@
 * {
-  font-family: "Hanken Grotesk", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .navbar .menu-horizontal li {
@@ -13,4 +13,8 @@
 .navbar .menu-horizontal li:hover {
   font-weight: 700;
   font-size: 18px !important;
+}
+
+#header-text {
+  font-family: "Hanken Grotesk", sans-serif;
 }

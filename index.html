@@ -21,7 +21,7 @@
   <body>
     <!-- navbar -->
     <div
-      class="navbar px-10 justify-between bg-white items-center h-[45px] min-h-0 shadow-sm"
+      class="navbar sticky top-0 z-50 px-10 justify-between bg-white items-center h-[45px] min-h-0 shadow-sm"
     >
       <div class="dropdown dropdown-center group">
         <div
@@ -66,8 +66,20 @@
       <img
         src="assets/svg/PLAIMANAS.svg"
         alt="logo"
-        class="invert w-full h-auto px-5 pt-[25px]"
+        class="mix-blend-difference fixed top-[70px] z-50 w-full h-auto px-5"
       />
     </div>
+
+    <!-- hero section -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="assets/images/hero-video-poster.png"
+      class="w-full h-full object-cover"
+    >
+      <source src="assets/videos/hero-video.mp4" type="video/mp4" />
+    </video>
   </body>
 </html>
