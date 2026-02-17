@@ -37,3 +37,8 @@ h3 {
     transform: translateX(-25%);
   }
 }
+
+#tab-selector input {
+  padding: 10px 15px;
+  font-size: 13px;
+}
