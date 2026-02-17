@@ -79,6 +79,7 @@
       loop
       playsinline
       poster="assets/images/hero-video-poster.png"
+      id="hero-video"
       class="w-full h-full object-cover"
     >
       <source src="assets/videos/hero-video.mp4" type="video/mp4" />
@@ -698,5 +699,75 @@
         </form>
       </div>
     </div>
+
+    <!-- homepage button -->
+    <div>
+      <button
+        onclick="scrollToTop()"
+        class="h-9 text-[12px] text-black hover:text-black/50 p-[10px] cursor-pointer uppercase"
+      >
+        HOMPAGE
+      </button>
+    </div>
+
+    <footer class="bg-[#F8F9F8] pt-8 pb-[46px] px-[60px] mx-[10px]">
+      <div class="flex justify-between">
+        <div>
+          <p class="info-head">ABOUT</p>
+          <ul>
+            <li><a>Women</a></li>
+            <li><a>Collection</a></li>
+            <li><a>Editorial</a></li>
+            <li><a>Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="info-head">HELP</p>
+          <ul>
+            <li><a>Payment Notification</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="info-head">SOCIAL</p>
+          <ul>
+            <li><a>Instagram</a></li>
+            <li><a>Facebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="info-head">LEGAL</p>
+          <ul>
+            <li><a>Terms & Conditions</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Cookies Policy</a></li>
+          </ul>
+        </div>
+        <div class="w-[393px]">
+          <p class="info-head">NEWSLETTER</p>
+          <form class="mt-[30px]">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              class="h-[37px] w-full text-sm border-0 border-b border-black/50 outline-none focus:ring-0 placeholder:text-black/30"
+            />
+            <button
+              type="submit"
+              class="mt-10 h-[34px] w-full bg-[#E0E0E0] hover:bg-[#E0E0E0]/80 text-black text-[12px] border-none cursor-pointer uppercase"
+            >
+              SEND
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="flex justify-between pt-[60px] text-[12px]">
+        <span>©PLAIMANAS</span> <span>Web by PUNYAGIT NOINON</span>
+      </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
