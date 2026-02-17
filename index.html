@@ -91,7 +91,6 @@
           class="absolute inset-0 flex flex-col items-center justify-center z-10"
         >
           <h1
-            id="header-text"
             class="sticky top-[240px] text-white font-[900] text-[80px] text-center"
           >
             NEW
@@ -123,7 +122,6 @@
           class="absolute inset-0 flex flex-col items-center justify-center z-10"
         >
           <h2
-            id="header-text"
             class="sticky top-[320px] text-white font-[900] text-[80px] text-center z-10"
           >
             BESTSELLER
@@ -164,12 +162,11 @@
     >
       <div class="grid grid-flow-cols-2 gap-[68px] max-w-[978px] h-full px-24">
         <div class="relative col-span-2 cursor-pointer group">
-          <h3
-            id="header-text"
+          <h2
             class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[60px] text-center z-20"
           >
             COLLECTION 01
-          </h3>
+          </h2>
 
           <!-- main image -->
           <img
@@ -195,18 +192,17 @@
         <div
           class="relative aspect-square overflow-hidden cursor-pointer group"
         >
-          <h3
-            id="header-text"
+          <h2
             class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[40px] text-center z-20"
           >
             COLLECTION 02
-          </h3>
+          </h2>
 
           <!-- main image -->
           <img
             src="assets/images/collection02.png"
             alt="A person who got Dental Crown"
-            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:translate-y-1 z-10"
           />
           <!-- hover image -->
           <img
@@ -218,24 +214,57 @@
         <div
           class="relative aspect-square overflow-hidden cursor-pointer group"
         >
-          <h3
-            id="header-text"
+          <h2
             class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[40px] text-center z-20"
           >
             COLLECTION 03
-          </h3>
+          </h2>
 
           <!-- main image -->
           <img
             src="assets/images/collection03.jpg"
             alt="A white flower"
-            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:translate-y-1 z-10"
           />
           <!-- hover image -->
           <img
             src="assets/images/hover-collection-img.png"
             alt="A blurly man silhouette"
             class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- slide show -->
+    <div class="h-full w-full mt-20 lg:mt-[100px] overflow-hidden bg-black">
+      <div class="flex w-max slide-show">
+        <!-- loop1 -->
+        <div class="flex gap-[95px] h-[85px] pr-[95px] flex-shrink-0">
+          <h2 class="text-white font-[900] text-[60px] text-center">
+            NEW ARRIVAL
+          </h2>
+          <img src="assets/svg/arrow.svg" class="w-[85px] h-[85px]" />
+          <h2 class="text-white font-[900] text-[60px] text-center">
+            BESTSELLING
+          </h2>
+          <img
+            src="assets/svg/arrow.svg"
+            class="rotate-180 w-[85px] h-[85px]"
+          />
+        </div>
+        <!-- loop2 -->
+        <div class="flex gap-[95px] h-[85px] pr-[95px] flex-shrink-0">
+          <h2 class="text-white font-[900] text-[60px] text-center">
+            NEW ARRIVAL
+          </h2>
+          <img src="assets/svg/arrow.svg" class="w-[85px] h-[85px]" />
+          <h2 class="text-white font-[900] text-[60px] text-center">
+            BESTSELLING
+          </h2>
+          <img
+            src="assets/svg/arrow.svg"
+            class="rotate-180 w-[85px] h-[85px]"
           />
         </div>
       </div>

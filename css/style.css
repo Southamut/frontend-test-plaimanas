@@ -15,6 +15,25 @@
   font-size: 18px !important;
 }
 
-#header-text {
+h1,
+h2,
+h3 {
   font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* slide show animate */
+.slide-show {
+  animation-name: move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
