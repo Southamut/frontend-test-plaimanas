@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.navbar .menu-horizontal .normal-menu {
+.normal-menu {
   padding: 10px;
   font-size: 13px !important;
   font-weight: 400;
@@ -12,7 +12,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.navbar .menu-horizontal .normal-menu:hover {
+.normal-menu:hover {
   font-weight: 700;
   font-size: 18px !important;
 }
