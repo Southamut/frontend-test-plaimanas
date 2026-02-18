@@ -21,7 +21,7 @@
   <body>
     <!-- navbar -->
     <div
-      class="navbar sticky top-0 z-50 px-10 justify-between bg-white items-center h-[45px] min-h-0 shadow-sm"
+      class="navbar sticky top-0 z-50 px-10 justify-between bg-white items-center h-[45px] min-h-0"
     >
       <div class="dropdown dropdown-center group">
         <div
@@ -41,11 +41,38 @@
 
       <div>
         <ul class="menu menu-horizontal items-center p-0 gap-6">
-          <li>WOMEN</li>
-          <li>COLLECTION</li>
-          <li>EDITORIAL</li>
-          <li>NEWS</li>
-          <li>STORES</li>
+          <li class="normal-menu">WOMEN</li>
+          <li class="normal-menu">COLLECTION</li>
+          <div class="relative group flex items-center">
+            <li class="normal-menu">EDITORIAL</li>
+            <div
+              class="fixed inset-0 bg-black z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out pointer-events-none"
+            >
+              <div class="flex flex-col items-center">
+                <ul class="flex flex-col pointer-events-auto">
+                  <div class="flex h-[45px] items-center justify-center">
+                    <li class="text-white text-[18px] font-bold uppercase">
+                      EDITORIAL
+                    </li>
+                  </div>
+                  <li>
+                    <a href="#" class="sub-menu">A.S.C</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sub-menu">BAZAAR</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sub-menu">ELLE</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sub-menu">GQ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <li class="normal-menu">NEWS</li>
+          <li class="normal-menu">STORES</li>
         </ul>
       </div>
 
@@ -64,11 +91,11 @@
     </div>
 
     <!-- logo -->
-    <div class="w-full">
+    <div id="logo" class="w-full flex justify-center">
       <img
         src="assets/svg/PLAIMANAS.svg"
         alt="logo"
-        class="mix-blend-difference fixed top-[70px] z-50 w-full h-auto px-5"
+        class="mix-blend-difference fixed top-[70px] z-40 h-auto px-5"
       />
     </div>
 
