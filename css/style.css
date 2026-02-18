@@ -36,6 +36,15 @@ h3 {
   font-family: "Hanken Grotesk", sans-serif;
 }
 
+#logo img {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+#logo img.small {
+  width: 310px;
+}
+
 /* slide show animate */
 .slide-show {
   animation-name: move;
