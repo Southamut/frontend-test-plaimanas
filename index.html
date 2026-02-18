@@ -78,62 +78,19 @@
       </div>
 
       <!-- mobile menu -->
-      <div
-        class="sm:hidden absolute left-1/2 -translate-x-1/2 dropdown dropdown-center"
-      >
+      <div class="sm:hidden absolute left-1/2 -translate-x-1/2">
         <div
-          tabindex="0"
-          role="button"
-          class="w-5 h-2 border-t-1 border-b-1 flex justify-center items-center"
-        ></div>
-        <!-- mobile menu popup -->
-        <div
-          tabindex="-1"
-          class="sm:hidden dropdown-content h-[calc(100dvh-45px)] flex flex-col bg-white mt-[18.5px] pt-4"
+          id="menu-toggle"
+          class="relative w-5 h-5 flex justify-center items-center"
+          onclick="toggleMenu()"
         >
-          <ul
-            class="menu menu-vertical w-screen items-center justify-start p-0 md:gap-0 lg:gap-6"
-          >
-            <li class="normal-menu">WOMEN</li>
-            <li class="normal-menu">COLLECTION</li>
-            <li class="w-full">
-              <div
-                class="collapse bg-transparent overflow-hidden p-0 m-0 gap-0 text-center after:hidden"
-              >
-                <input type="checkbox" name="sub-1" class="peer/editorial" />
-                <div
-                  class="normal-menu collapse-title flex gap-2 items-center justify-center peer-checked/editorial:!text-[24px] peer-checked/editorial:!font-bold"
-                >
-                  EDITORIAL<span
-                    ><img src="assets/svg/dropdown-arrow.svg"
-                  /></span>
-                </div>
-                <div
-                  class="collapse-content opacity-0 peer-checked/editorial:opacity-100"
-                >
-                  <ul class="p-0 m-0 pb-[30px] [--border:0]">
-                    <li class="normal-menu">A.S.C</li>
-                    <li class="normal-menu">BAZAAR</li>
-                    <li class="normal-menu">GQ</li>
-                    <li class="normal-menu">L'official thailand</li>
-                    <li class="normal-menu">numero</li>
-                    <li class="normal-menu">vogue</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="normal-menu">NEWS</li>
-            <li class="normal-menu">STORES</li>
-          </ul>
-
           <div
-            class="w-full flex justify-center mix-blend-difference px-1 pb-2 mt-auto"
+            class="menu-open absolute w-full h-2 border-t border-b transition-all duration-300"
+          ></div>
+          <div
+            class="menu-close absolute w-full h-full transition-all duration-300 rotate-90 opacity-0"
           >
-            <img
-              src="assets/svg/PLAIMANAS.svg"
-              alt="logo"
-              class="h-auto w-full"
-            />
+            <img src="assets/svg/x.svg" />
           </div>
         </div>
       </div>
@@ -153,6 +110,51 @@
         />
       </div>
     </nav>
+
+    <!-- mobile menu popup -->
+    <div
+      id="menu-mobile"
+      class="sm:hidden fixed top-[45px] left-0 w-full h-[calc(100dvh-45px)] flex flex-col bg-white pt-4 z-41 transition-all duration-300 -translate-y-full opacity-0"
+    >
+      <ul
+        class="menu menu-vertical w-screen items-center justify-start p-0 md:gap-0 lg:gap-6"
+      >
+        <li class="normal-menu">WOMEN</li>
+        <li class="normal-menu">COLLECTION</li>
+        <li class="w-full">
+          <div
+            class="collapse bg-transparent overflow-hidden p-0 m-0 gap-0 text-center after:hidden"
+          >
+            <input type="checkbox" name="sub-1" class="peer/editorial" />
+            <div
+              class="normal-menu collapse-title flex gap-2 items-center justify-center peer-checked/editorial:!text-[24px] peer-checked/editorial:!font-bold"
+            >
+              EDITORIAL<span><img src="assets/svg/dropdown-arrow.svg" /></span>
+            </div>
+            <div
+              class="collapse-content opacity-0 peer-checked/editorial:opacity-100"
+            >
+              <ul class="p-0 m-0 pb-[30px] [--border:0]">
+                <li class="normal-menu">A.S.C</li>
+                <li class="normal-menu">BAZAAR</li>
+                <li class="normal-menu">GQ</li>
+                <li class="normal-menu">L'official thailand</li>
+                <li class="normal-menu">numero</li>
+                <li class="normal-menu">vogue</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="normal-menu">NEWS</li>
+        <li class="normal-menu">STORES</li>
+      </ul>
+
+      <div
+        class="w-full flex justify-center mix-blend-difference px-1 pb-2 mt-auto"
+      >
+        <img src="assets/svg/PLAIMANAS.svg" alt="logo" class="h-auto w-full" />
+      </div>
+    </div>
 
     <!-- logo -->
     <div
