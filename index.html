@@ -21,7 +21,7 @@
   <body>
     <!-- navbar -->
     <nav
-      class="navbar sticky top-0 z-50 px-10 justify-between bg-white items-center h-[45px] min-h-0"
+      class="navbar sticky top-0 z-50 px-[14px] sm:px-10 justify-between bg-white items-center h-[45px] min-h-0"
     >
       <div class="dropdown dropdown-center group">
         <div
@@ -39,8 +39,9 @@
         </ul>
       </div>
 
+      <!-- desktop menu -->
       <div class="hidden sm:flex">
-        <ul class="menu menu-horizontal items-center p-0 gap-6">
+        <ul class="menu menu-horizontal items-center p-0 md:gap-0 lg:gap-6">
           <li class="normal-menu">WOMEN</li>
           <li class="normal-menu">COLLECTION</li>
           <div class="relative group flex items-center">
@@ -76,9 +77,11 @@
         </ul>
       </div>
 
-      <div class="menu menu-horizontal p-0 w-[100px] justify-between">
+      <div
+        class="menu menu-horizontal p-0 w-[100px] justify-between items-center"
+      >
         <button
-          class="text-[13px] font-normal cursor-pointer hover:opacity-50 uppercase"
+          class="text-[13px] p-[10px] font-normal cursor-pointer hover:opacity-50 uppercase"
         >
           SIGN IN
         </button>
