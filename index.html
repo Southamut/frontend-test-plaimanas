@@ -166,17 +166,19 @@
 
     <!-- hero section -->
     <header>
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="assets/images/hero-video-poster.png"
-        id="hero-video"
-        class="w-full h-full object-cover"
-      >
-        <source src="assets/videos/hero-video.mp4" type="video/mp4" />
-      </video>
+      <div class="w-full h-[calc(100dvh-45px)] overflow-hidden">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/images/hero-video-poster.png"
+          id="hero-video"
+          class="w-full h-full object-cover"
+        >
+          <source src="assets/videos/hero-video.mp4" type="video/mp4" />
+        </video>
+      </div>
     </header>
 
     <!-- section NEW -->
@@ -188,7 +190,7 @@
           class="absolute inset-0 flex flex-col items-center justify-center z-10"
         >
           <h1
-            class="sticky top-[240px] text-white font-[900] text-[40px] sm:text-[80px] text-center uppercase"
+            class="sticky top-[120px] lg:top-[240px] text-white font-[900] text-[40px] sm:text-[80px] text-center uppercase"
           >
             NEW
           </h1>
@@ -219,7 +221,7 @@
           class="absolute inset-0 flex flex-col items-center justify-center z-10"
         >
           <h2
-            class="sticky top-[320px] text-white font-[900] text-[40px] sm:text-[80px] text-center z-10 uppercase"
+            class="sticky top-[100px] md:[210px] lg:top-[320px] text-white font-[900] text-[40px] sm:text-[80px] text-center z-10 uppercase"
           >
             BESTSELLER
           </h2>
@@ -450,247 +452,261 @@
       <!-- tab box -->
       <div
         id="tab-selector"
-        class="tabs tabs-boxed flex-col sm:flex-row bg-transparent justify-center items-center gap-4 mt-9 px-[22px] xl:px-0 xl:w-[1092px]"
+        class="tabs tabs-boxed flex-col sm:flex-row bg-transparent justify-center items-center gap-4 mt-9 px-[22px] xl:px-0 xl:w-[1092px] group"
       >
         <!-- tab 1 -->
         <input
           type="radio"
           name="my_tabs_1"
+          id="tab1"
           class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
           aria-label="ORDERS"
         />
-        <!-- content 1 -->
-        <div class="tab-content mt-10 mx-auto">
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-bold uppercase text-white">
-              Lorem ipsum, dolor sit amet consectetur?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              Lorem ipsum, dolor sit amet consectetur?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              Lorem ipsum, dolor sit amet consectetur?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <!-- tab 2 -->
         <input
           type="radio"
           name="my_tabs_1"
+          id="tab2"
           class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
           aria-label="SHIPPING"
         />
-        <!-- content 2 -->
-        <div class="tab-content mt-10 mx-auto">
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-bold uppercase text-white">
-              DO YOU OFFER INTERATIONAL SHIPPING?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Items can be returned within 14 days of receipt, provided they
-                are unworn, unwashed, and in original condition with tags
-                attached.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              HOW LONG DOES DELIVERY TAKE?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              HOW CAN I TRACK MY ORDER?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <!-- tab 3 -->
         <input
           type="radio"
           name="my_tabs_1"
+          id="tab3"
           class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
           aria-label="RETURNS & EXCHANGES"
           checked
         />
-        <!-- content 3 -->
-        <div class="tab-content mt-10 mx-auto">
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-bold uppercase text-white">
-              WHAT IS YOUR RETURN POLICY?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Items can be returned within 14 days of receipt, provided they
-                are unworn, unwashed, and in original condition with tags
-                attached.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              CAN I EXCHANGE FOR DIFFERENT SIZE?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
-          >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              ARE SALE ITEM REFUNDABLE?
-            </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <!-- tab 4 -->
         <input
           type="radio"
           name="my_tabs_1"
+          id="tab4"
           class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
           aria-label="SIZING & PRODUCTS"
         />
-        <!-- content 4 -->
-        <div class="tab-content mt-10 mx-auto">
+        <div class="grid mt-10 mx-auto">
+          <!-- content 1 -->
           <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab1:checked]:opacity-100 pointer-events-none group-has-[#tab1:checked]:pointer-events-auto transition-all duration-500"
           >
-            <input type="checkbox" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-bold uppercase text-white">
-              Lorem ipsum, dolor sit amet consectetur?
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
             </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
             </div>
           </div>
 
+          <!-- content 2 -->
           <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab2:checked]:opacity-100 pointer-events-none group-has-[#tab2:checked]:pointer-events-auto transition-all duration-500"
           >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              Lorem ipsum, dolor sit amet consectetur?
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                DO YOU OFFER INTERATIONAL SHIPPING?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Items can be returned within 14 days of receipt, provided they
+                  are unworn, unwashed, and in original condition with tags
+                  attached.
+                </p>
+              </div>
             </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                HOW LONG DOES DELIVERY TAKE?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                HOW CAN I TRACK MY ORDER?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
             </div>
           </div>
 
+          <!-- content 3 -->
           <div
-            class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab3:checked]:opacity-100 pointer-events-none group-has-[#tab3:checked]:pointer-events-auto transition-all duration-500"
           >
-            <input type="checkbox" name="my-accordion-2" />
-            <div class="collapse-title font-bold uppercase text-white">
-              Lorem ipsum, dolor sit amet consectetur?
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                WHAT IS YOUR RETURN POLICY?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Items can be returned within 14 days of receipt, provided they
+                  are unworn, unwashed, and in original condition with tags
+                  attached.
+                </p>
+              </div>
             </div>
-            <div class="collapse-content">
-              <p class="text-white/60 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae aspernatur doloremque animi, repellendus eum nisi sed
-                dolore harum dolorum assumenda, eligendi culpa nesciunt cum
-                officia magnam at pariatur in accusantium.
-              </p>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                CAN I EXCHANGE FOR DIFFERENT SIZE?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                ARE SALE ITEM REFUNDABLE?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- content 4 -->
+          <div
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab4:checked]:opacity-100 pointer-events-none group-has-[#tab4:checked]:pointer-events-auto transition-all duration-500"
+          >
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
             </div>
           </div>
         </div>
