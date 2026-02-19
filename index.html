@@ -4,7 +4,892 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PLAIMANAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- navbar -->
+    <nav
+      class="navbar sticky top-0 z-50 px-[14px] sm:px-10 justify-between bg-white items-center h-[45px] min-h-0"
+    >
+      <div class="dropdown dropdown-center group">
+        <div
+          tabindex="0"
+          class="flex gap-2 items-center text-[13px] font-normal cursor-pointer group-focus-within:opacity-50 uppercase"
+        >
+          TH - THB
+          <span><img src="assets/svg/dropdown-arrow.svg" /></span>
+        </div>
+        <ul
+          tabindex="-1"
+          class="dropdown-content menu bg-white z-1 p-2 w-20 text-center cursor-pointer"
+        >
+          <li class="text-[13px] uppercase">US -USD</li>
+        </ul>
+      </div>
+
+      <!-- desktop menu -->
+      <div class="hidden sm:flex">
+        <ul class="menu menu-horizontal items-center p-0 md:gap-0 lg:gap-6">
+          <li class="normal-menu">WOMEN</li>
+          <li class="normal-menu">COLLECTION</li>
+          <div class="relative group flex items-center">
+            <li class="normal-menu">EDITORIAL</li>
+            <div
+              class="fixed inset-0 bg-black z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out pointer-events-none"
+            >
+              <div class="flex flex-col items-center">
+                <ul class="flex flex-col pointer-events-auto">
+                  <div class="flex h-[45px] items-center justify-center">
+                    <li class="text-white text-[18px] font-bold uppercase">
+                      EDITORIAL
+                    </li>
+                  </div>
+                  <li>
+                    <a href="#" class="sub-menu">A.S.C</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sub-menu">BAZAAR</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sub-menu">ELLE</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sub-menu">GQ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <li class="normal-menu">NEWS</li>
+          <li class="normal-menu">STORES</li>
+        </ul>
+      </div>
+
+      <!-- mobile menu -->
+      <div class="sm:hidden absolute left-1/2 -translate-x-1/2">
+        <div
+          id="menu-toggle"
+          class="relative w-5 h-5 flex justify-center items-center"
+          onclick="toggleMenu()"
+        >
+          <div
+            class="menu-open absolute w-full h-2 border-t border-b transition-all duration-300"
+          ></div>
+          <div
+            class="menu-close absolute w-full h-full transition-all duration-300 rotate-90 opacity-0"
+          >
+            <img src="assets/svg/x.svg" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="menu menu-horizontal p-0 max-w-[100px] justify-between items-center"
+      >
+        <button
+          class="text-[13px] p-[10px] font-normal cursor-pointer hover:opacity-50 uppercase"
+        >
+          SIGN IN
+        </button>
+        <img
+          src="assets/svg/bag-vector.svg"
+          alt="bag-vector"
+          class="w-[17px] h-[17px] cursor-pointer"
+        />
+      </div>
+    </nav>
+
+    <!-- mobile menu popup -->
+    <div
+      id="menu-mobile"
+      class="sm:hidden fixed top-[45px] left-0 w-full h-[calc(100dvh-45px)] flex flex-col bg-white pt-4 z-41 transition-all duration-300 -translate-y-full opacity-0"
+    >
+      <ul
+        class="menu menu-vertical w-screen items-center justify-start p-0 md:gap-0 lg:gap-6"
+      >
+        <li class="normal-menu">WOMEN</li>
+        <li class="normal-menu">COLLECTION</li>
+        <li class="w-full">
+          <div
+            class="collapse bg-transparent overflow-hidden p-0 m-0 gap-0 text-center after:hidden"
+          >
+            <input type="checkbox" name="sub-1" class="peer/editorial" />
+            <div
+              class="normal-menu collapse-title flex gap-2 items-center justify-center peer-checked/editorial:!text-[24px] peer-checked/editorial:!font-bold"
+            >
+              EDITORIAL<span><img src="assets/svg/dropdown-arrow.svg" /></span>
+            </div>
+            <div
+              class="collapse-content opacity-0 peer-checked/editorial:opacity-100"
+            >
+              <ul class="p-0 m-0 pb-[30px] [--border:0]">
+                <li class="normal-menu">A.S.C</li>
+                <li class="normal-menu">BAZAAR</li>
+                <li class="normal-menu">GQ</li>
+                <li class="normal-menu">L'official thailand</li>
+                <li class="normal-menu">numero</li>
+                <li class="normal-menu">vogue</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="normal-menu">NEWS</li>
+        <li class="normal-menu">STORES</li>
+      </ul>
+
+      <div
+        class="w-full flex justify-center mix-blend-difference px-1 pb-2 mt-auto"
+      >
+        <img src="assets/svg/PLAIMANAS.svg" alt="logo" class="h-auto w-full" />
+      </div>
+    </div>
+
+    <!-- logo -->
+    <div
+      id="logo"
+      class="w-full flex justify-center mix-blend-difference z-40 fixed mt-[10px] sm:mt-[25px] px-1 sm:px-5"
+    >
+      <img src="assets/svg/PLAIMANAS.svg" alt="logo" class="h-auto w-full" />
+    </div>
+
+    <!-- hero section -->
+    <header>
+      <div class="w-full h-[calc(100dvh-45px)] overflow-hidden">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/images/hero-video-poster.png"
+          id="hero-video"
+          class="w-full h-full object-cover"
+        >
+          <source src="assets/videos/hero-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </header>
+
+    <!-- section NEW -->
+    <section
+      class="h-full w-full pt-20 lg:pt-[100px] flex flex-col items-center justify-center"
+    >
+      <div class="relative flex items-center justify-center px-[54px] sm:px-0">
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center z-10"
+        >
+          <h1
+            class="sticky top-[120px] lg:top-[240px] text-white font-[900] text-[40px] sm:text-[80px] text-center uppercase"
+          >
+            NEW
+          </h1>
+        </div>
+        <div>
+          <img src="assets/images/NEW-img.png" alt="A machanic tool image" />
+        </div>
+      </div>
+
+      <div class="max-w-[715px] mt-5 px-[22px] sm:px-0">
+        <p class="text-center font-bold text-sm sm:text-base">
+          Sed egestas, nibh a condimentum imperdiet
+        </p>
+        <p class="text-center text-[12px] sm:text-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare,
+          nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie
+          quam justo ut lacus. Proin vitae
+        </p>
+      </div>
+    </section>
+
+    <!-- section BESTSELLER -->
+    <section
+      class="h-full w-full pt-20 lg:pt-[100px] flex flex-col items-center justify-center"
+    >
+      <div class="relative flex flex-col items-center">
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center z-10"
+        >
+          <h2
+            class="sticky top-[100px] md:[210px] lg:top-[320px] text-white font-[900] text-[40px] sm:text-[80px] text-center z-10 uppercase"
+          >
+            BESTSELLER
+          </h2>
+        </div>
+        <div class="max-w-[1200px] px-[22px]">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/images/Bestseller-video-poster.png"
+            class="w-full h-auto object-cover"
+          >
+            <source
+              src="assets/videos/Bestseller-video-section.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div class="max-w-[715px] mt-5 px-[22px] sm:px-0">
+        <p class="text-center font-bold text-sm sm:text-base">
+          Sed egestas, nibh a condimentum imperdiet
+        </p>
+        <p class="text-center text-[12px] sm:text-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare,
+          nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie
+          quam justo ut lacus. Proin vitae
+        </p>
+      </div>
+    </section>
+
+    <!-- collection section -->
+    <section
+      class="h-full w-full pt-20 lg:pt-[100px] flex flex-col items-center justify-center"
+    >
+      <div
+        class="grid grid-flow-cols-2 gap-[24px] lg:gap-[68px] lg:max-w-[978px] h-full px-[22px] lg:px-0"
+      >
+        <div class="relative col-span-2 cursor-pointer group">
+          <h2
+            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[30px] sm:text-[60px] text-center z-20 uppercase"
+          >
+            COLLECTION 01
+          </h2>
+
+          <!-- main image -->
+          <img
+            src="assets/images/collection01.png"
+            alt="A white smoke image"
+            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 z-10"
+          />
+          <!-- main video -->
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/images/collection01-vid-cover.png"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          >
+            <source
+              src="assets/videos/collection01-hover-vid.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div
+          class="relative aspect-square overflow-hidden cursor-pointer group"
+        >
+          <h2
+            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[18px] sm:text-[40px] text-center z-20 uppercase"
+          >
+            COLLECTION 02
+          </h2>
+
+          <!-- main image -->
+          <img
+            src="assets/images/collection02.png"
+            alt="A person who got Dental Crown"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:translate-y-1 z-10"
+          />
+          <!-- hover image -->
+          <img
+            src="assets/images/hover-collection-img.png"
+            alt="A blurly man silhouette"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          />
+        </div>
+        <div
+          class="relative aspect-square overflow-hidden cursor-pointer group"
+        >
+          <h2
+            class="absolute inset-0 flex flex-col items-center justify-center text-white font-[900] text-[18px] sm:text-[40px] text-center z-20 uppercase"
+          >
+            COLLECTION 03
+          </h2>
+
+          <!-- main image -->
+          <img
+            src="assets/images/collection03.jpg"
+            alt="A white flower"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:translate-y-1 z-10"
+          />
+          <!-- hover image -->
+          <img
+            src="assets/images/hover-collection-img.png"
+            alt="A blurly man silhouette"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- slide show -->
+    <section class="h-full w-full mt-20 lg:mt-[100px] overflow-hidden bg-black">
+      <div class="flex w-max slide-show">
+        <!-- loop1 -->
+        <div class="flex gap-[95px] h-[85px] pr-[95px] flex-shrink-0">
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            NEW ARRIVAL
+          </h2>
+          <img src="assets/svg/arrow.svg" class="w-[85px] h-[85px]" />
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            BESTSELLING
+          </h2>
+          <img
+            src="assets/svg/arrow.svg"
+            class="rotate-180 w-[85px] h-[85px]"
+          />
+        </div>
+        <!-- loop2 -->
+        <div class="flex gap-[95px] h-[85px] pr-[95px] flex-shrink-0">
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            NEW ARRIVAL
+          </h2>
+          <img src="assets/svg/arrow.svg" class="w-[85px] h-[85px]" />
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            BESTSELLING
+          </h2>
+          <img
+            src="assets/svg/arrow.svg"
+            class="rotate-180 w-[85px] h-[85px]"
+          />
+        </div>
+        <!-- loop3 -->
+        <div class="flex gap-[95px] h-[85px] pr-[95px] flex-shrink-0">
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            NEW ARRIVAL
+          </h2>
+          <img src="assets/svg/arrow.svg" class="w-[85px] h-[85px]" />
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            BESTSELLING
+          </h2>
+          <img
+            src="assets/svg/arrow.svg"
+            class="rotate-180 w-[85px] h-[85px]"
+          />
+        </div>
+        <!-- loop4 -->
+        <div class="flex gap-[95px] h-[85px] pr-[95px] flex-shrink-0">
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            NEW ARRIVAL
+          </h2>
+          <img src="assets/svg/arrow.svg" class="w-[85px] h-[85px]" />
+          <h2 class="text-white font-[900] text-[60px] text-center uppercase">
+            BESTSELLING
+          </h2>
+          <img
+            src="assets/svg/arrow.svg"
+            class="rotate-180 w-[85px] h-[85px]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- feature section -->
+    <section
+      class="h-full w-full py-20 lg:py-[100px] flex flex-col items-center justify-center"
+    >
+      <div
+        class="flex flex-col lg:flex-row gap-y-12 justify-between items-center w-full px-[22px] xl:px-0 xl:w-[1092px]"
+      >
+        <div class="lg:w-70">
+          <p class="font-bold uppercase">WORLDWIDE SHIPPING</p>
+          <p class="text-sm pt-[14px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare,
+            nisl non rhoncus commodo, turpis elit ultricies justo, vitae
+            molestie quam justo ut lacus. Proin vitae
+          </p>
+        </div>
+        <div class="lg:w-70">
+          <p class="font-bold uppercase">CUSTONER SERVICE</p>
+          <p class="text-sm pt-[14px]">
+            <span class="underline">Lorem ipsum dolor sit amet</span>,
+            consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo,
+            turpis elit ultricies justo, vitae molestie quam justo ut lacus.
+            Proin vitae
+          </p>
+        </div>
+        <div class="lg:w-70">
+          <p class="font-bold uppercase">SECURE PAYMENT</p>
+          <p class="text-sm pt-[14px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare,
+            nisl non rhoncus commodo, turpis elit ultricies justo, vitae
+            molestie quam justo ut lacus. Proin vitae
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- frequently asked section -->
+    <section
+      class="h-full w-full py-20 lg:py-[100px] flex flex-col items-center justify-center bg-black"
+    >
+      <div
+        class="flex flex-col justify-center items-center px-[22px] sm:px-0 text-center sm:text-start"
+      >
+        <h2 class="text-[24px] sm:text-[40px] font-[900] text-white uppercase">
+          FREQUENTLY ASKED QUESTIONS
+        </h2>
+        <p class="text-sm text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare,
+          nisl non rhoncus commodo.
+        </p>
+      </div>
+      <!-- tab box -->
+      <div
+        id="tab-selector"
+        class="tabs tabs-boxed flex-col sm:flex-row bg-transparent justify-center items-center gap-4 mt-9 px-[22px] xl:px-0 xl:w-[1092px] group"
+      >
+        <!-- tab 1 -->
+        <input
+          type="radio"
+          name="my_tabs_1"
+          id="tab1"
+          class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
+          aria-label="ORDERS"
+        />
+        <!-- tab 2 -->
+        <input
+          type="radio"
+          name="my_tabs_1"
+          id="tab2"
+          class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
+          aria-label="SHIPPING"
+        />
+        <!-- tab 3 -->
+        <input
+          type="radio"
+          name="my_tabs_1"
+          id="tab3"
+          class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
+          aria-label="RETURNS & EXCHANGES"
+          checked
+        />
+        <!-- tab 4 -->
+        <input
+          type="radio"
+          name="my_tabs_1"
+          id="tab4"
+          class="tab rounded-full w-max border-[#828282] bg-white/20 checked:bg-white text-white checked:text-black"
+          aria-label="SIZING & PRODUCTS"
+        />
+        <div class="grid mt-10 mx-auto">
+          <!-- content 1 -->
+          <div
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab1:checked]:opacity-100 pointer-events-none group-has-[#tab1:checked]:pointer-events-auto transition-all duration-500"
+          >
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- content 2 -->
+          <div
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab2:checked]:opacity-100 pointer-events-none group-has-[#tab2:checked]:pointer-events-auto transition-all duration-500"
+          >
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                DO YOU OFFER INTERATIONAL SHIPPING?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Items can be returned within 14 days of receipt, provided they
+                  are unworn, unwashed, and in original condition with tags
+                  attached.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                HOW LONG DOES DELIVERY TAKE?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                HOW CAN I TRACK MY ORDER?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- content 3 -->
+          <div
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab3:checked]:opacity-100 pointer-events-none group-has-[#tab3:checked]:pointer-events-auto transition-all duration-500"
+          >
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                WHAT IS YOUR RETURN POLICY?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Items can be returned within 14 days of receipt, provided they
+                  are unworn, unwashed, and in original condition with tags
+                  attached.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                CAN I EXCHANGE FOR DIFFERENT SIZE?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                ARE SALE ITEM REFUNDABLE?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- content 4 -->
+          <div
+            class="col-start-1 row-start-1 opacity-0 group-has-[#tab4:checked]:opacity-100 pointer-events-none group-has-[#tab4:checked]:pointer-events-auto transition-all duration-500"
+          >
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" checked="checked" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-arrow border-b border-white/20 rounded-none"
+            >
+              <input type="checkbox" name="my-accordion-2" />
+              <div class="collapse-title font-bold uppercase text-white">
+                Lorem ipsum, dolor sit amet consectetur?
+              </div>
+              <div class="collapse-content">
+                <p class="text-white/60 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae aspernatur doloremque animi, repellendus eum nisi
+                  sed dolore harum dolorum assumenda, eligendi culpa nesciunt
+                  cum officia magnam at pariatur in accusantium.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- form section -->
+    <section
+      class="h-full w-full py-20 lg:py-[100px] flex flex-col items-center"
+    >
+      <div
+        class="flex flex-col lg:flex-row gap-12 justify-between items-center lg:items-start w-full px-[22px] xl:px-0 xl:w-[1092px]"
+      >
+        <div class="flex flex-col lg:w-[375px] text-center lg:text-start">
+          <h2 class="text-[40px] font-[900] uppercase p-0 m-0 leading-none">
+            MAKE AN<br />INQUIRY
+          </h2>
+          <p class="text-sm mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare,
+            nisl non rhoncus commodo.
+          </p>
+        </div>
+
+        <!-- form -->
+        <form class="sm:w-[644px] w-full">
+          <div class="flex items-center gap-[21px]">
+            <div class="flex items-center gap-2">
+              <input
+                type="radio"
+                id="onsite"
+                name="worktype"
+                value="Onsite"
+                checked="checked"
+                class="w-[18px] h-[18px] border-black/30 accent-black"
+              />
+              <label for="onsite">Onsite</label>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="radio"
+                id="hybrid"
+                name="worktype"
+                value="Hybrid"
+                class="w-[18px] h-[18px] border-black/30 accent-black"
+              />
+              <label for="hybrid">Hybrid</label>
+            </div>
+          </div>
+
+          <div
+            class="w-full flex flex-col sm:flex-row justify-between items-center gap-[20px] mt-4"
+          >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full name*"
+              class="h-[52px] w-full text-sm border-0 border-b border-black/50 outline-none focus:ring-0 placeholder:text-black/30"
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email*"
+              value="Plaimanas@gmail.com"
+              class="h-[52px] w-full text-sm border-0 border-b border-black/50 outline-none focus:ring-0 placeholder:text-black/30"
+            />
+          </div>
+          <div
+            class="w-full flex flex-col sm:flex-row justify-between items-center gap-[20px] mt-4"
+          >
+            <input
+              type="tel"
+              id="pnumber"
+              name="pnumber"
+              placeholder="Phone Number*"
+              class="h-[52px] w-full text-sm border-0 border-b border-black/50 outline-none focus:ring-0 placeholder:text-black/30"
+            />
+            <select
+              id="subject"
+              name="subject"
+              class="h-[52px] w-full text-sm border-0 border-b outline-none focus:ring-0 has-[:disabled:checked]:text-black/30"
+            >
+              <option value="placeholder" disabled selected hidden>
+                Select Subject*
+              </option>
+              <option value="1">General inquiry</option>
+              <option value="2">Job Application</option>
+              <option value="3">Media & Press</option>
+            </select>
+          </div>
+
+          <div class="mt-4">
+            <input
+              type="checkbox"
+              id="terms"
+              class="w-[17px] h-[17px] rounded-sm border-black/30 accent-black"
+            />
+            <label for="terms" class="text-sm text-black/50"
+              >I agree to all terms & conditions</label
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="mt-10 h-[52px] w-[140px] bg-black hover:bg-black/80 text-white border-none cursor-pointer uppercase"
+          >
+            SEND
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- homepage button -->
+    <div>
+      <button
+        onclick="scrollToTop()"
+        class="h-9 text-[12px] text-black hover:text-black/50 p-[10px] cursor-pointer uppercase"
+      >
+        HOMPAGE
+      </button>
+    </div>
+
+    <footer class="bg-[#F8F9F8] pt-8 pb-[46px] px-[22px] xl:px-[60px]">
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-[51px] lg:gap-0 lg:flex justify-between"
+      >
+        <div>
+          <p class="info-head">ABOUT</p>
+          <ul>
+            <li><a>Women</a></li>
+            <li><a>Collection</a></li>
+            <li><a>Editorial</a></li>
+            <li><a>Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="info-head">HELP</p>
+          <ul>
+            <li><a>Payment Notification</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="info-head">SOCIAL</p>
+          <ul>
+            <li><a>Instagram</a></li>
+            <li><a>Facebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="info-head">LEGAL</p>
+          <ul>
+            <li><a>Terms & Conditions</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Cookies Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-span-2 md:col-span-4 lg:w-[393px]">
+          <p class="info-head">NEWSLETTER</p>
+          <form class="mt-[30px]">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              class="h-[37px] w-full text-sm border-0 border-b border-black/50 outline-none focus:ring-0 placeholder:text-black/30"
+            />
+            <button
+              type="submit"
+              class="mt-[18px] lg:mt-10 h-[34px] w-full bg-[#E0E0E0] hover:bg-[#E0E0E0]/80 text-black text-[12px] border-none cursor-pointer uppercase"
+            >
+              SEND
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="flex justify-between pt-[60px] text-[12px]">
+        <span>©PLAIMANAS</span> <span>Web by PUNYAGIT NOINON</span>
+      </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
 </html>
